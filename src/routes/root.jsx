@@ -13,7 +13,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import apecoin from "./apecoin.svg";
-import imgApe from "./aperoot.png";
+import imgApe from "../assets/aperoot.png";
 
 function CustomLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -96,7 +96,7 @@ const Root = () => {
                   </Transition.Child>
                   <div className="flex-shrink-0 flex items-center px-4 font-semibold text-white">
                     <img src={imgApe} className="h-6 w-6" />
-                    <span className="ml-2 text-bit text-2xl">Ape AlphaB</span>
+                    <span className="ml-2 text-bit text-2xl">Ape Alpha</span>
                   </div>
                   <nav
                     className="mt-5 flex-shrink-0 h-full divide-y divide-mant overflow-y-auto"
