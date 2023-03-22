@@ -13,6 +13,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import apecoin from "./apecoin.svg";
+import imgApe from "./aperoot.png";
 
 function CustomLink({ children, to, ...props }) {
   let resolved = useResolvedPath(to);
@@ -23,7 +24,7 @@ function CustomLink({ children, to, ...props }) {
       <Link
         className={
           match
-            ? "bg-apelight text-black group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md"
+            ? "bg-apelight text-white group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md"
             : "text-white hover:text-white hover:bg-black group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md"
         }
         to={to}
@@ -94,7 +95,8 @@ const Root = () => {
                     </div>
                   </Transition.Child>
                   <div className="flex-shrink-0 flex items-center px-4 font-semibold text-white">
-                    <span className="ml-2 text-bit text-2xl">Ape Alpha</span>
+                    <img src={imgApe} className="h-6 w-6" />
+                    <span className="ml-2 text-bit text-2xl">Ape AlphaB</span>
                   </div>
                   <nav
                     className="mt-5 flex-shrink-0 h-full divide-y divide-mant overflow-y-auto"
@@ -151,15 +153,6 @@ const Root = () => {
                           Wallet Profiler
                         </Link>
                       </ul>
-                      <ul>
-                        <Link to="/collections">
-                          <StarIcon
-                            className="mr-4 flex-shrink-0 h-6 w-6"
-                            aria-hidden="true"
-                          />
-                          Collections
-                        </Link>
-                      </ul>
                     </div>
                     <div className="mt-6 pt-6">
                       <div className="px-2 space-y-1">
@@ -174,7 +167,7 @@ const Root = () => {
                           key="GitHub"
                           rel="noreferrer"
                           target="_blank"
-                          href="https://github.com/ivanmolto/modularalpha"
+                          href="https://github.com/ivanmolto/apealpha"
                           className="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-white hover:text-white hover:bg-mant"
                         >
                           <svg
@@ -219,6 +212,7 @@ const Root = () => {
         <div className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
           <div className="flex flex-col flex-grow bg-ape pt-5 pb-4 overflow-y-auto ">
             <div className="flex items-center flex-shrink-0 px-4 text-lg font-semibold text-white">
+              <img src={imgApe} className="h-10 w-10" />
               <span className="ml-2 text-bit text-2xl">Ape Alpha</span>
             </div>
             <nav
@@ -271,15 +265,6 @@ const Root = () => {
                     Wallet Profiler
                   </CustomLink>
                 </ul>
-                <ul>
-                  <CustomLink to="/collections">
-                    <StarIcon
-                      className="mr-4 flex-shrink-0 h-6 w-6"
-                      aria-hidden="true"
-                    />
-                    Collections
-                  </CustomLink>
-                </ul>
               </div>
               <div className="mt-6 pt-6">
                 <div className="px-2 space-y-1">
@@ -292,7 +277,7 @@ const Root = () => {
                   </CustomLink>
                   <a
                     key="GitHub"
-                    href="https://github.com/ivanmolto/modularalpha"
+                    href="https://github.com/ivanmolto/apealpha"
                     rel="noreferrer"
                     target="_blank"
                     className="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-white hover:text-white hover:bg-mant"
@@ -333,9 +318,8 @@ const Root = () => {
             <div className="text-white justify-center mx-auto items-center px-4 py-3 mb-4">
               <a href="https://apecoin.com" rel="noreferrer" target="_blank">
                 <div className="inline-flex items-center gap-x-1.5 py-1.5 px-1 text-base font-semibold text-white">
-                  <span className="w-full">Built</span>
                   <img
-                    className="h-5/6 w-5/6"
+                    className="h-full w-full"
                     src={apecoin}
                     alt="Built on ApeCoin"
                   />
@@ -346,7 +330,7 @@ const Root = () => {
         </div>
 
         <div className="lg:pl-64 flex flex-col flex-1">
-          <div className="relative z-10 flex-shrink-0 flex h-16 bg-gray-50 border-b border-gray-200 lg:border-none">
+          <div className="relative z-10 flex-shrink-0 flex h-16 border-b border-gray-200 lg:border-none">
             <button
               type="button"
               className="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emant lg:hidden"
