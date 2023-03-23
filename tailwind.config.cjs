@@ -10,8 +10,7 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
       ape: "#073183",
-      apehard: "#073183",
-      apelight: "#7ab1e9",
+      apelight: "#0050ef",
     },
     fontFamily: {
       montserrat: ["Montserrat", "sans-serif"],
