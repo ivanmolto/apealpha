@@ -17,7 +17,6 @@ function getTransactions(account) {
 }
 
 function Activity({ account }) {
-  console.log(account);
   const activityQuery = useQuery({
     queryKey: ["activity", account],
     queryFn: () => getTransactions(account),
@@ -41,7 +40,7 @@ function Activity({ account }) {
     activityQuery.data.length === 0
   )
     return null;
-  console.log(activityQuery.data);
+
   const transactions = activityQuery.data.result;
   return (
     <>
@@ -93,7 +92,6 @@ function Activity({ account }) {
         ></nav>
       </div>
 
-      {/* Activity table (small breakpoint and up) */}
       <div className="hidden sm:block">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mt-2 flex flex-col">
@@ -189,7 +187,6 @@ function Activity({ account }) {
                   ))}
                 </tbody>
               </table>
-              {/* Pagination */}
               <nav
                 className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
                 aria-label="Pagination"
@@ -215,12 +212,6 @@ function Activity({ account }) {
     </>
   );
 }
-
-const statusStyles = {
-  success: "bg-green-100 text-green-800",
-  processing: "bg-yellow-100 text-yellow-800",
-  failed: "bg-gray-100 text-gray-800",
-};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
