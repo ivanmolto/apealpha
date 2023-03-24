@@ -9,6 +9,7 @@ import Governance from "./routes/governance";
 import Treasury from "./routes/treasury";
 import Staking from "./routes/staking";
 import WalletProfiler from "./routes/wallet-profiler";
+import NoMatch from "./routes/no-match";
 import ErrorPage from "./error-page";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -26,26 +27,35 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Index /> },
       {
-        path: "apecoin",
-        element: <ApeCoin />,
-      },
-      {
-        path: "governance",
-        element: <Governance />,
-      },
-      {
-        path: "treasury",
-        element: <Treasury />,
-      },
-      {
-        path: "staking",
-        element: <Staking />,
-      },
-      {
-        path: "walletprofiler",
-        element: <WalletProfiler />,
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <Index /> },
+          {
+            path: "apecoin",
+            element: <ApeCoin />,
+          },
+          {
+            path: "governance",
+            element: <Governance />,
+          },
+          {
+            path: "treasury",
+            element: <Treasury />,
+          },
+          {
+            path: "staking",
+            element: <Staking />,
+          },
+          {
+            path: "walletprofiler",
+            element: <WalletProfiler />,
+          },
+          {
+            path: "*",
+            element: <NoMatch />,
+          },
+        ],
       },
     ],
   },
