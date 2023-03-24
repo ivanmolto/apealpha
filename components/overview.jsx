@@ -51,7 +51,6 @@ function NativeBalance({ account }) {
   if (nativeBalanceQuery.isError) return <div>{`Error! ${error.message}`}</div>;
   if (nativeBalanceQuery.data === null || nativeBalanceQuery.data.length === 0)
     return <div>0 ETH</div>;
-  console.log(nativeBalanceQuery.data.balance);
   return <>{nativeBalanceQuery.data.balance / 10 ** 18} ETH</>;
 }
 
