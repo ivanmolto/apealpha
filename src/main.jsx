@@ -11,11 +11,20 @@ import Staking from "./routes/staking";
 import WalletProfiler from "./routes/wallet-profiler";
 import NoMatch from "./routes/no-match";
 import ErrorPage from "./error-page";
+import { Mainnet, DAppProvider } from "@usedapp/core";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const config = {
+  readOnlyChainId: Mainnet.chainId,
+  readOnlyUrls: {
+    [Mainnet.chainId]: `https://eth-mainnet.g.alchemy.com/v2/${
+      import.meta.env.VITE_ALCHEMY_API_KEY
+    }`,
+  },
+};
+
 const client = new ApolloClient({
-  // options go here
   uri: "https://hub.snapshot.org/graphql",
   cache: new InMemoryCache(),
 });
@@ -63,10 +72,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
-    </ApolloProvider>
+    <DAppProvider config={config}>
+      <ApolloProvider client={client}>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </ApolloProvider>
+    </DAppProvider>
   </React.StrictMode>
 );
