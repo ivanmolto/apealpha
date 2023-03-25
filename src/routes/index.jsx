@@ -74,7 +74,7 @@ const Index = () => {
                 </h3>
                 <p className="mt-2 text-sm text-gray-500">
                   Go down to the rabbit hole! <br />
-                  Profile the ApeCoin token, and wallets.
+                  Profile the ApeCoin token, and staking.
                 </p>
               </div>
             </div>
