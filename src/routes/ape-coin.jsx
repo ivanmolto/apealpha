@@ -743,14 +743,9 @@ const ApeCoin = () => {
                                           </div>
                                         </div>
                                         <div className="mt-5 flex justify-center sm:mt-0">
-                                          <a
-                                            href="https://forum.apecoin.com"
-                                            className="flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                                            rel="noreferrer"
-                                            target="_blank"
-                                          >
+                                          <div className="flex items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300">
                                             <Price />
-                                          </a>
+                                          </div>
                                         </div>
                                       </div>
                                       <dl className="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
