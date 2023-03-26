@@ -8,7 +8,6 @@ import ApeCoin from "./routes/ape-coin";
 import Governance from "./routes/governance";
 import Treasury from "./routes/treasury";
 import Staking from "./routes/staking";
-import WalletProfiler from "./routes/wallet-profiler";
 import NoMatch from "./routes/no-match";
 import ErrorPage from "./error-page";
 import { Mainnet, DAppProvider } from "@usedapp/core";
@@ -55,10 +54,6 @@ const router = createBrowserRouter([
           {
             path: "staking",
             element: <Staking />,
-          },
-          {
-            path: "walletprofiler",
-            element: <WalletProfiler />,
           },
           {
             path: "*",

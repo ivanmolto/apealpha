@@ -144,15 +144,6 @@ const Root = () => {
                           Staking
                         </Link>
                       </ul>
-                      <ul>
-                        <Link to="/walletprofiler">
-                          <BriefcaseIcon
-                            className="mr-4 flex-shrink-0 h-6 w-6"
-                            aria-hidden="true"
-                          />
-                          Wallet Profiler
-                        </Link>
-                      </ul>
                     </div>
                     <div className="mt-6 pt-6">
                       <div className="px-2 space-y-1">
@@ -254,15 +245,6 @@ const Root = () => {
                       aria-hidden="true"
                     />
                     Staking
-                  </CustomLink>
-                </ul>
-                <ul>
-                  <CustomLink to="/walletprofiler">
-                    <BriefcaseIcon
-                      className="mr-4 flex-shrink-0 h-6 w-6"
-                      aria-hidden="true"
-                    />
-                    Wallet Profiler
                   </CustomLink>
                 </ul>
               </div>
