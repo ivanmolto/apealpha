@@ -173,7 +173,7 @@ function Proposals() {
                     <div className="inline-flex space-x-2 text-gray-500 ">
                       <HandThumbUpIcon className="h-5 w-5" aria-hidden="true" />
                       <span className=" font-medium text-gray-900">
-                        {numberWithCommas(Number(aip.scores[0]).toFixed(0))}{" "}
+                        {numberWithCommas(Number(aip.scores[0]).toFixed(0))} APE
                       </span>
                       <span className="sr-only">{aip.choices[0]}</span>
                     </div>
@@ -185,7 +185,7 @@ function Proposals() {
                         aria-hidden="true"
                       />
                       <span className="font-medium text-gray-900">
-                        {numberWithCommas(Number(aip.scores[1]).toFixed(0))}{" "}
+                        {numberWithCommas(Number(aip.scores[1]).toFixed(0))} APE
                       </span>
                       <span className="sr-only">{aip.choices[1]}</span>
                     </div>
@@ -202,6 +202,7 @@ function Proposals() {
                         {(!isNaN(aip.scores[2]) &&
                           numberWithCommas(Number(aip.scores[2]).toFixed(0))) ||
                           null}{" "}
+                        APE
                       </span>
                       <span className="sr-only">{aip.choices[2] || null}</span>
                     </div>
