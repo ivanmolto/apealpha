@@ -43,7 +43,7 @@ Governance tracking proposals, members and strategies.
 
 ### Treasury
 
-Wallets holding tokens alloted to the ApeCoin DAO treasury and resources with their recent activity
+Wallets holding tokens allotted to the ApeCoin DAO treasury and resources with their recent activity
 .
 
 ![]()
@@ -52,7 +52,7 @@ Wallets holding tokens alloted to the ApeCoin DAO treasury and resources with th
 
 .
 
-![](https://ivanmolto.mypinata.cloud/ipfs/QmTjNJFA9oKafjWR67kYTte3zqPm7duBHz5P4vpbyVxhVW)
+![]()
 
 ## API endpoints used
 

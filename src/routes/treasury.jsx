@@ -398,8 +398,8 @@ const Treasury = () => {
                       Treasury
                     </h1>
                     <p className="mt-2 max-w-2xl text-base text-gray-500">
-                      Wallets holding tokens alloted to the ApeCoin DAO treasury
-                      and resources.
+                      Wallets holding tokens allotted to the ApeCoin DAO
+                      treasury and resources.
                     </p>
                   </div>
 
