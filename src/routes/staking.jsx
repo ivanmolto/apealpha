@@ -284,6 +284,29 @@ const Staking = () => {
                                 alt="APE"
                               />
                             </ul>
+                            <p className="mt-6 flex items-baseline gap-x-1">
+                              <span className="text-base font-semibold tracking-tight text-gray-900">
+                                {poolApe ? (
+                                  poolApe.error ? (
+                                    <div>Error fetching contract</div>
+                                  ) : (
+                                    numberWithCommas(
+                                      Number(
+                                        utils.formatEther(poolApe.value[3])
+                                      ).toFixed(2)
+                                    )
+                                  )
+                                ) : (
+                                  "Loading..."
+                                )}
+                              </span>
+                              <span className="text-base font-semibold leading-6 text-gray-900">
+                                APE{" "}
+                                <span className="text-sm font-normal text-gray-500">
+                                  rewards share
+                                </span>
+                              </span>
+                            </p>
                           </div>
                         </a>
                         <a
@@ -341,6 +364,29 @@ const Staking = () => {
                                 alt="BAYC"
                               />
                             </ul>
+                            <p className="mt-6 flex items-baseline gap-x-1">
+                              <span className="text-base font-semibold tracking-tight text-gray-900">
+                                {poolBayc ? (
+                                  poolBayc.error ? (
+                                    <div>Error fetching contract</div>
+                                  ) : (
+                                    numberWithCommas(
+                                      Number(
+                                        utils.formatEther(poolBayc.value[3])
+                                      ).toFixed(2)
+                                    )
+                                  )
+                                ) : (
+                                  "Loading..."
+                                )}
+                              </span>
+                              <span className="text-base font-semibold leading-6 text-gray-900">
+                                APE{" "}
+                                <span className="text-sm font-normal text-gray-500">
+                                  rewards share
+                                </span>
+                              </span>
+                            </p>
                           </div>
                         </a>
                         <a
@@ -397,6 +443,29 @@ const Staking = () => {
                                 alt="MAYC"
                               />
                             </ul>
+                            <p className="mt-6 flex items-baseline gap-x-1">
+                              <span className="text-base font-semibold tracking-tight text-gray-900">
+                                {poolMayc ? (
+                                  poolMayc.error ? (
+                                    <div>Error fetching contract</div>
+                                  ) : (
+                                    numberWithCommas(
+                                      Number(
+                                        utils.formatEther(poolMayc.value[3])
+                                      ).toFixed(2)
+                                    )
+                                  )
+                                ) : (
+                                  "Loading..."
+                                )}
+                              </span>
+                              <span className="text-base font-semibold leading-6 text-gray-900">
+                                APE{" "}
+                                <span className="text-sm font-normal text-gray-500">
+                                  rewards share
+                                </span>
+                              </span>
+                            </p>
                           </div>
                         </a>
                         <a
@@ -451,6 +520,29 @@ const Staking = () => {
                             >
                               <img src="https://ivanmolto.mypinata.cloud/ipfs/QmU7kJccaB9caUZthhWNNQo1moazWePfviN4d5uvs5z59u?_gl=1*1yzdnk0*_ga*ODhhNzU4NWEtNGMwZS00ODExLWE2YmQtZGE4ZDZjYmU4N2I0*_ga_5RMPXG14TE*MTY3OTc1OTY2NS41NC4xLjE2Nzk3NTk2NjguNTcuMC4w" />
                             </ul>
+                            <p className="mt-6 flex items-baseline gap-x-1">
+                              <span className="text-base font-semibold tracking-tight text-gray-900">
+                                {poolBakc ? (
+                                  poolBakc.error ? (
+                                    <div>Error fetching contract</div>
+                                  ) : (
+                                    numberWithCommas(
+                                      Number(
+                                        utils.formatEther(poolBakc.value[3])
+                                      ).toFixed(2)
+                                    )
+                                  )
+                                ) : (
+                                  "Loading..."
+                                )}
+                              </span>
+                              <span className="text-base font-semibold leading-6 text-gray-900">
+                                APE{" "}
+                                <span className="text-sm font-normal text-gray-500">
+                                  rewards share
+                                </span>
+                              </span>
+                            </p>
                           </div>
                         </a>
                       </div>
