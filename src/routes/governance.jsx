@@ -202,7 +202,7 @@ function Proposals() {
                         {(!isNaN(aip.scores[2]) &&
                           numberWithCommas(Number(aip.scores[2]).toFixed(0))) ||
                           null}{" "}
-                        APE
+                        {!isNaN(aip.scores[2]) && "APE"}
                       </span>
                       <span className="sr-only">{aip.choices[2] || null}</span>
                     </div>
