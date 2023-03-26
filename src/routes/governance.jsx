@@ -112,8 +112,7 @@ function Proposals() {
   const aips = data.proposals;
   return (
     <>
-      <div></div>
-      <h2 className="mt-4 text-lg font-medium leading-6 text-gray-900">
+      <h2 className="mt-4 mb-2 text-lg font-medium leading-6 text-gray-900">
         Proposals
       </h2>
       <ul role="list" className="space-y-4">
@@ -244,8 +243,66 @@ function Proposals() {
 
 const Governance = () => {
   const { loading, error, data } = useQuery(SPACE);
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
+  if (loading)
+    return (
+      <>
+        <div className="font-montserrat">
+          <div className="flex justify-end max-w-6xl mx-auto mt-0 px-4 text-sm leading-6 font-normal text-gray-900 sm:px-6 lg:px-8">
+            ApeCoin DAO
+          </div>
+          <main className="flex-1 flex-col pb-8">
+            <div className="-mt-3">
+              <div className="flex-1 px-4 flex-col justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                <div className="space-y-8 divide-y divide-gray-200">
+                  <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+                    <div className="space-y-6 sm:space-y-5">
+                      <div>
+                        <h1 className="mb-8 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
+                          Governance
+                        </h1>
+                        <div className="min-h-full">
+                          <main className="mt-4 pb-8">Loading...</main>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </>
+    );
+  if (error)
+    return (
+      <>
+        <div className="font-montserrat">
+          <div className="flex justify-end max-w-6xl mx-auto mt-0 px-4 text-sm leading-6 font-normal text-gray-900 sm:px-6 lg:px-8">
+            ApeCoin DAO
+          </div>
+          <main className="flex-1 flex-col pb-8">
+            <div className="-mt-3">
+              <div className="flex-1 px-4 flex-col justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                <div className="space-y-8 divide-y divide-gray-200">
+                  <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+                    <div className="space-y-6 sm:space-y-5">
+                      <div>
+                        <h1 className="mb-8 text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
+                          Governance
+                        </h1>
+                        <div className="min-h-full">
+                          <main className="mt-4 pb-8">{`Error! ${error.message}`}</main>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </>
+    );
   const snap = data.space;
   return (
     <>
@@ -314,7 +371,7 @@ const Governance = () => {
                                     <Stats />
                                   </div>
                                 </section>
-                                {/* Actions panel */}
+                                {/* Proposals panel */}
                                 <section aria-labelledby="quick-links-title">
                                   <div className="mt-4">
                                     <h1 className="sr-only">Proposals</h1>
