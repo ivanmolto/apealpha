@@ -130,7 +130,7 @@ function Balance({ account }) {
     queryFn: () => getBalance(account),
   });
 
-  if (balanceQuery.isLoading) return <div>isLoading</div>;
+  if (balanceQuery.isLoading) return <div>Loading...</div>;
   if (balanceQuery.isError) return <div>{`Error! ${error.message}`}</div>;
   if (balanceQuery.data === null || balanceQuery.data.length === 0)
     return <div>0 APE</div>;
@@ -157,7 +157,7 @@ function NativeBalance({ account }) {
     queryFn: () => getNativeBalance(account),
   });
 
-  if (nativeBalanceQuery.isLoading) return <div>isLoading</div>;
+  if (nativeBalanceQuery.isLoading) return <div>Loading...</div>;
   if (nativeBalanceQuery.isError) return <div>{`Error! ${error.message}`}</div>;
   if (nativeBalanceQuery.data === null || nativeBalanceQuery.data.length === 0)
     return <div>0 ETH</div>;

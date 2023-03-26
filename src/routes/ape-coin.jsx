@@ -129,9 +129,9 @@ function Coin() {
     queryFn: () => getCoin(),
   });
 
-  if (coinQuery.isLoading) return <div>isLoading</div>;
+  if (coinQuery.isLoading) return <div>Loading...</div>;
   if (coinQuery.isError) return <div>{`Error! ${error.message}`}</div>;
-  if (coinQuery.data === null) return <div>KO</div>;
+  if (coinQuery.data === null) return <div>n/a</div>;
   const coin = coinQuery.data;
 
   return (
@@ -278,9 +278,9 @@ function MarketData() {
     queryFn: () => getCoin(),
   });
 
-  if (coinQuery.isLoading) return <div>isLoading</div>;
+  if (coinQuery.isLoading) return <div>Loading...</div>;
   if (coinQuery.isError) return <div>{`Error! ${error.message}`}</div>;
-  if (coinQuery.data === null) return <div>-</div>;
+  if (coinQuery.data === null) return <div>n/a</div>;
   const marketdata = coinQuery.data;
 
   return (
@@ -589,9 +589,9 @@ function Token() {
     queryFn: () => getTokenPrice(),
   });
 
-  if (tokenQuery.isLoading) return <div>isLoading</div>;
+  if (tokenQuery.isLoading) return <div>Loading...</div>;
   if (tokenQuery.isError) return <div>{`Error! ${error.message}`}</div>;
-  if (tokenQuery.data === null) return <div>KO</div>;
+  if (tokenQuery.data === null) return <div>n/a</div>;
   const contract = "0x4d224452801aced8b2f0aebe155379bb5d594381";
   const token = tokenQuery.data;
 
