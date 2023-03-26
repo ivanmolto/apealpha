@@ -128,10 +128,7 @@ const Staking = () => {
                       <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:leading-9">
                         Staking
                       </h1>
-                      <p className="mt-2 max-w-2xl text-base text-gray-500">
-                        Wallets holding tokens alloted to the ApeCoin DAO
-                        treasury and resources.
-                      </p>
+                      <p className="mt-2 max-w-2xl text-base text-gray-500"></p>
                       <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         <div
                           key="walletIndex"
