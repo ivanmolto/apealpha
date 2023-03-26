@@ -153,6 +153,33 @@ function Proposals() {
                           closed
                         </div>
                       )}
+                      <div className="mt-2">
+                        <span className="inline-flex sm:hidden items-center text-sm">
+                          <div className="inline-flex space-x-2 text-gray-500">
+                            <CheckCircleIcon
+                              className="h-5 w-5"
+                              aria-hidden="true"
+                            />
+                            <span className="font-medium text-gray-900">
+                              {aip.votes} votes
+                            </span>
+                            <span className="sr-only">Votes</span>
+                          </div>
+                        </span>
+                      </div>
+                      <div className="flex sm:hidden text-sm">
+                        <span className="inline-flex items-center text-sm">
+                          <a
+                            href={aip.link}
+                            className="inline-flex space-x-2 text-apelight hover:underline"
+                          >
+                            <BoltIcon className="h-5 w-5" aria-hidden="true" />
+                            <span className="font-medium text-apelight">
+                              View on Snapshot
+                            </span>
+                          </a>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -211,11 +238,8 @@ function Proposals() {
                       <span className="sr-only">{aip.choices[2] || null}</span>
                     </div>
                   </span>
-                  <span className="inline-flex items-center text-sm">
-                    <div
-                      type="button"
-                      className="inline-flex space-x-2 text-gray-500"
-                    >
+                  <span className="hidden sm:inline-flex items-center text-sm">
+                    <div className="inline-flex space-x-2 text-gray-500">
                       <CheckCircleIcon className="h-5 w-5" aria-hidden="true" />
                       <span className="font-medium text-gray-900">
                         {aip.votes} votes
