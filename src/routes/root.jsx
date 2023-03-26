@@ -104,56 +104,51 @@ const Root = () => {
                   >
                     <div className="px-2 space-y-1">
                       <ul>
-                        <CustomLink
-                          to="/apecoin"
-                          className={({ isActive, isPending }) =>
-                            isActive ? "active" : isPending ? "pending" : ""
-                          }
-                        >
+                        <CustomLink to="/apecoin">
                           <FireIcon
-                            className="mr-4 flex-shrink-0 h-6 w-6"
+                            className="mr-4 flex-shrink-0 h-6 w-6 text-white"
                             aria-hidden="true"
                           />
-                          ApeCoin Overview
+                          <span className="text-white">ApeCoin Overview</span>
                         </CustomLink>
                       </ul>
                       <ul>
-                        <Link to="/governance">
+                        <CustomLink to="/governance">
                           <BuildingLibraryIcon
-                            className="mr-4 flex-shrink-0 h-6 w-6"
+                            className="mr-4 flex-shrink-0 h-6 w-6 text-white"
                             aria-hidden="true"
                           />
                           Governance
-                        </Link>
+                        </CustomLink>
                       </ul>
                       <ul>
-                        <Link to="/treasury">
+                        <CustomLink to="/treasury">
                           <CircleStackIcon
                             className="mr-4 flex-shrink-0 h-6 w-6"
                             aria-hidden="true"
                           />
                           Treasury
-                        </Link>
+                        </CustomLink>
                       </ul>
                       <ul>
-                        <Link to="/staking">
+                        <CustomLink to="/staking">
                           <Square3Stack3DIcon
                             className="mr-4 flex-shrink-0 h-6 w-6"
                             aria-hidden="true"
                           />
                           Staking
-                        </Link>
+                        </CustomLink>
                       </ul>
                     </div>
                     <div className="mt-6 pt-6">
                       <div className="px-2 space-y-1">
-                        <Link to="/">
+                        <CustomLink to="/">
                           <HomeIcon
                             className="mr-4 flex-shrink-0 h-6 w-6"
                             aria-hidden="true"
                           />
                           Home
-                        </Link>
+                        </CustomLink>
                         <a
                           key="GitHub"
                           rel="noreferrer"
