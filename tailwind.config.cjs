@@ -9,6 +9,8 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
+      green: colors.green,
+      red: colors.red,
       ape: "#073183",
       apelight: "#0050ef",
     },
