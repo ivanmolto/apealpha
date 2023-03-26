@@ -164,7 +164,11 @@ function Proposals() {
                 </h2>
               </div>
               <div
-                className="mt-2 space-y-4 text-sm text-gray-700"
+                className="hidden sm:block mt-2 space-y-4 text-sm text-gray-700"
+                dangerouslySetInnerHTML={{ __html: aip.body }}
+              />
+              <div
+                className="sm:hidden mt-2 space-y-4 text-sm text-gray-700 truncate"
                 dangerouslySetInnerHTML={{ __html: aip.body }}
               />
               <div className="mt-6 flex justify-between space-x-8">
@@ -220,7 +224,7 @@ function Proposals() {
                     </div>
                   </span>
                 </div>
-                <div className="flex text-sm">
+                <div className="hidden sm:flex text-sm">
                   <span className="inline-flex items-center text-sm">
                     <a
                       href={aip.link}
