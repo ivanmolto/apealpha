@@ -18,7 +18,12 @@ const ErrorPage = () => {
                 Sorry, an unexpected error has occurred
               </p>
               <p className="mt-1 text-base text-gray-900 font-montserrat">
-                <i> {error.statusText || error.message} </i>
+                <i>
+                  {" "}
+                  {"CoinGecko API is down" ||
+                    error.statusText ||
+                    error.message}{" "}
+                </i>
               </p>
             </div>
           </div>
