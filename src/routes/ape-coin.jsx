@@ -108,7 +108,7 @@ function Price() {
   });
 
   if (tokenQuery.isLoading) return <div>Loading...</div>;
-  if (tokenQuery.isError) return <div>{`Error! ${error.message}`}</div>;
+  if (tokenQuery.isError) return <div className="text-xl">n/a</div>;
   if (tokenQuery.data === null) return <div>n/a</div>;
   const contract = "0x4d224452801aced8b2f0aebe155379bb5d594381";
   const token = tokenQuery.data;
@@ -130,7 +130,138 @@ function Coin() {
   });
 
   if (coinQuery.isLoading) return <div>Loading...</div>;
-  if (coinQuery.isError) return <div>{`Error! ${error.message}`}</div>;
+  if (coinQuery.isError)
+    return (
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          key="rank"
+          className="mt-2 overflow-hidden rounded-lg bg-white shadow"
+        >
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <StarIcon
+                  className="h-6 w-6 text-gray-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="ml-5 w-0 flex-1">
+                <dl>
+                  <dt className="truncate text-sm font-medium text-gray-500">
+                    Market Cap Rank
+                  </dt>
+                  <dd>
+                    <div className="truncate text-md font-medium text-gray-900">
+                      n/a
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          key="high"
+          className="mt-2 overflow-hidden rounded-lg bg-white shadow"
+        >
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <ArrowSmallUpIcon
+                  className="h-6 w-6 text-gray-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="ml-5 w-0 flex-1">
+                <dl>
+                  <dt className="truncate text-sm font-medium text-gray-500">
+                    High 24h
+                  </dt>
+                  <dd>
+                    <div className="text-md font-medium text-gray-900">n/a</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          key="low"
+          className="mt-2 overflow-hidden rounded-lg bg-white shadow"
+        >
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <ArrowSmallDownIcon
+                  className="h-6 w-6 text-gray-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="ml-5 w-0 flex-1">
+                <dl>
+                  <dt className="truncate text-sm font-medium text-gray-500">
+                    Low 24h
+                  </dt>
+                  <dd>
+                    <div className="text-md font-medium text-gray-900">n/a</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          key="ath"
+          className="mt-2 overflow-hidden rounded-lg bg-white shadow"
+        >
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <TrophyIcon
+                  className="h-6 w-6 text-gray-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="ml-5 w-0 flex-1">
+                <dl>
+                  <dt className="truncate text-sm font-medium text-gray-500">
+                    All Time High
+                  </dt>
+                  <dd>
+                    <div className="text-md font-medium text-gray-900">n/a</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          key="percentage"
+          className="mt-2 overflow-hidden rounded-lg bg-white shadow"
+        >
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <ReceiptPercentIcon
+                  className="h-6 w-6 text-gray-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="ml-5 w-0 flex-1">
+                <dl>
+                  <dt className="truncate text-sm font-medium text-gray-500">
+                    All Time High Change %
+                  </dt>
+                  <dd>
+                    <div className="text-md font-medium text-gray-900">n/a</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   if (coinQuery.data === null) return <div>n/a</div>;
   const coin = coinQuery.data;
 
@@ -279,7 +410,105 @@ function MarketData() {
   });
 
   if (coinQuery.isLoading) return <div>Loading...</div>;
-  if (coinQuery.isError) return <div>{`Error! ${error.message}`}</div>;
+  if (coinQuery.isError)
+    return (
+      <section aria-labelledby="recent-hires-title">
+        <div className="overflow-hidden rounded-lg bg-white shadow">
+          <div className="p-6">
+            <h2
+              className="text-base font-medium text-gray-900"
+              id="recent-hires-title"
+            >
+              Pricing Market Data
+            </h2>
+            <div className="mt-6 flow-root">
+              <ul role="list" className="-my-5 divide-y divide-gray-200">
+                <li key="1h" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 1h
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="24h" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 24h
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="7d" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 7d
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="14d" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 14d
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="30d" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 30d
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="60d" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 60d
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="200d" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 200d
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+                <li key="1y" className="py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900">
+                        Price Change Percentage 1y
+                      </p>
+                    </div>
+                    <div>n/a</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   if (coinQuery.data === null) return <div>n/a</div>;
   const marketdata = coinQuery.data;
 
