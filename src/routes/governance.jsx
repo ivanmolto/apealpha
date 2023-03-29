@@ -32,6 +32,7 @@ const SPACE = gql`
 `;
 
 const ACTIVE_PROPOSALS = 3;
+const PENDING_PROPOSALS = 4;
 
 const NUMPROPOSALS = gql`
   query getProposals {
@@ -98,7 +99,9 @@ function Stats() {
         <span className="text-gray-600">active proposals</span>
       </div>
       <div key="3" className="px-6 py-5 text-center text-sm font-medium">
-        <span className="text-gray-900">{aips.length - ACTIVE_PROPOSALS}</span>{" "}
+        <span className="text-gray-900">
+          {aips.length - ACTIVE_PROPOSALS - PENDING_PROPOSALS}
+        </span>{" "}
         <span className="text-gray-600">closed proposals</span>
       </div>
     </div>
@@ -110,6 +113,7 @@ function Proposals() {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   const aips = data.proposals;
+  console.log(aips);
   return (
     <>
       <h2 className="mt-4 mb-2 text-lg font-medium leading-6 text-gray-900">
@@ -143,13 +147,18 @@ function Proposals() {
                       </a>
                     </p>
                     <div className="text-sm text-gray-500">
+                      {aip.state === "pending" && (
+                        <div className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium text-white bg-red-500">
+                          pending
+                        </div>
+                      )}
                       {aip.state === "active" && (
                         <div className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium text-white bg-green-500">
                           active
                         </div>
                       )}
                       {aip.state === "closed" && (
-                        <div className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium text-white bg-red-500">
+                        <div className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium text-white bg-black">
                           closed
                         </div>
                       )}
@@ -204,7 +213,12 @@ function Proposals() {
                     <div className="inline-flex space-x-2 text-gray-500 ">
                       <HandThumbUpIcon className="h-5 w-5" aria-hidden="true" />
                       <span className=" font-medium text-gray-900">
-                        {numberWithCommas(Number(aip.scores[0]).toFixed(0))} APE
+                        {aip.scores.length < 1 && ""}
+                        {aip.scores.length > 1 &&
+                          numberWithCommas(
+                            Number(aip.scores[0]).toFixed(0)
+                          )}{" "}
+                        {aip.scores.length > 1 && "APE"}
                       </span>
                       <span className="sr-only">{aip.choices[0]}</span>
                     </div>
@@ -216,7 +230,12 @@ function Proposals() {
                         aria-hidden="true"
                       />
                       <span className="font-medium text-gray-900">
-                        {numberWithCommas(Number(aip.scores[1]).toFixed(0))} APE
+                        {aip.scores.length < 1 && ""}
+                        {aip.scores.length > 1 &&
+                          numberWithCommas(
+                            Number(aip.scores[1]).toFixed(0)
+                          )}{" "}
+                        {aip.scores.length > 1 && "APE"}
                       </span>
                       <span className="sr-only">{aip.choices[1]}</span>
                     </div>
@@ -233,7 +252,9 @@ function Proposals() {
                         {(!isNaN(aip.scores[2]) &&
                           numberWithCommas(Number(aip.scores[2]).toFixed(0))) ||
                           null}{" "}
-                        {!isNaN(aip.scores[2]) && "APE"}
+                        {!isNaN(aip.scores[2]) &&
+                          aip.scores.length > 1 &&
+                          "APE"}
                       </span>
                       <span className="sr-only">{aip.choices[2] || null}</span>
                     </div>
