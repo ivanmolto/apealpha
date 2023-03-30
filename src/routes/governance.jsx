@@ -31,7 +31,7 @@ const SPACE = gql`
   }
 `;
 
-const ACTIVE_PROPOSALS = 3;
+const ACTIVE_PROPOSALS = 0;
 const PENDING_PROPOSALS = 4;
 
 const NUMPROPOSALS = gql`
@@ -113,7 +113,6 @@ function Proposals() {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   const aips = data.proposals;
-  console.log(aips);
   return (
     <>
       <h2 className="mt-4 mb-2 text-lg font-medium leading-6 text-gray-900">
