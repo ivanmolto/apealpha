@@ -31,8 +31,8 @@ const SPACE = gql`
   }
 `;
 
-const ACTIVE_PROPOSALS = 0;
-const PENDING_PROPOSALS = 4;
+const ACTIVE_PROPOSALS = 4;
+const PENDING_PROPOSALS = 0;
 
 const NUMPROPOSALS = gql`
   query getProposals {
